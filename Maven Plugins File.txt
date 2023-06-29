@@ -340,6 +340,13 @@ spring boot in jsp starter
     <artifactId>spring-boot-starter-tomcat</artifactId>
 </dependency>
 
+
+Feign client 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+
 jstl starter 
 
 <dependency>
@@ -442,26 +449,23 @@ spring reactive programming
 
 
 
-swagger dependency 
+swagger dependency 2.x dependencies with spring boot starter 2.5.2 version 
 
-this dependency provide the api 
+
 <dependency>
     <groupId>io.springfox</groupId>
     <artifactId>springfox-swagger2</artifactId>
-    <version>2.10.5</version>
+    <version>2.9.2</version>
 </dependency>
 
-
-this dependency provide the ui  
-	
 <dependency>
     <groupId>io.springfox</groupId>
     <artifactId>springfox-swagger-ui</artifactId>
-    <version>2.10.5</version>
+    <version>2.9.2</version>
 </dependency>
 
 
-open UI 
+open UI 	with spring boot starter 2.7.12 version 
 
 		<dependency>
     		<groupId>org.springdoc</groupId>
@@ -469,12 +473,20 @@ open UI
     		<version>1.6.4</version>
 		</dependency>
 
+
+
 Eureka Server application.properties 
 
 server.port=8761
 eureka.client.register-with-eureka=false
 eureka.client.fetch-registry=false
 
+
+running same spring boot project run time with different port number 
+
+mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=8181'
+mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=8282'
+mvn spring-boot:run -Dspring-boot.run.jvmArguments='-Dserver.port=8383'
 
 
 Reactive Programming 
