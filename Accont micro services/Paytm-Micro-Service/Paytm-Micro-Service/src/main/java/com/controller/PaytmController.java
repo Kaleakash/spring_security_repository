@@ -27,4 +27,9 @@ public class PaytmController {
 	public String findBalance(@PathVariable("emailid") String emailid) {
 		return paytmService.findBalance(emailid);
 	}
+	
+	@GetMapping(value = "findAccountNumber/{emailid}")
+	public int findAccountNumber(@PathVariable("emailid") String emailid) {
+		return paytmService.findAccountNumber(emailid);
+	}
 }

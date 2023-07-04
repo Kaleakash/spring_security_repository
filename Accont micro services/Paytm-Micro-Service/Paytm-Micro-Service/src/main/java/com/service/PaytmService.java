@@ -39,4 +39,15 @@ public class PaytmService {
 			return "Paytm account not present";
 		}
 	}
+	
+	public int findAccountNumber(String emailid) {
+		Optional<Paytm> result = paytmRepository.findById(emailid);
+		if(result.isPresent()) {
+			Paytm pp = result.get();
+			int accno = pp.getAccno();
+			return accno;
+		}else {
+			return -1;
+		}
+	}
 }
