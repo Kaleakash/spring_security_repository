@@ -596,3 +596,38 @@ Selenium dependency
     <artifactId>selenium-java</artifactId>
     <version>4.2.1</version>
 </dependency>
+
+
+
+resilience4j.retry.instances.myRetry.max-attempts:3
+resilience4j.retry.instances.myRetry.wait-duration:5s
+
+resilience4j.circuitbreaker.circuit-breaker-aspect-order: 1
+
+resilience4j.circuitbreaker.instances.myCircuitBreaker.wait-duration-in-open-state: 1m
+resilience4j.circuitbreaker.instances.myCircuitBreaker.permitted-number-of-calls-in-half-open-state: 3
+resilience4j.circuitbreaker.instances.myCircuitBreaker.sliding-window-type: count-based
+resilience4j.circuitbreaker.instances.myCircuitBreaker.sliding-window-size: 5
+resilience4j.circuitbreaker.instances.myCircuitBreaker.minimum-number-of-calls: 5
+resilience4j.circuitbreaker.instances.myCircuitBreaker.slow-call-duration-threshold: 10s
+resilience4j.circuitbreaker.instances.myCircuitBreaker.slow-call-rate-threshold: 60
+resilience4j.circuitbreaker.instances.myCircuitBreaker.failure-rate-threshold: 60
+
+
+
+
+kafka configuration 
+
+spring.kafka.consumer.bootstrap-servers: localhost:9092
+spring.kafka.consumer.group-id: group-id
+#spring.kafka.consumer.auto-offset-reset: earliest
+spring.kafka.consumer.key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+spring.kafka.producer.bootstrap-servers: localhost:9092
+spring.kafka.producer.key-serializer: org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+
+
